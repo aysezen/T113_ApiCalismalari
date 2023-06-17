@@ -63,7 +63,6 @@ public class C07_Get_BodyTekrarlardanKurtulma {
                          "depositpaid", equalTo(false),
                          "additionalneeds", equalTo("Breakfast"));
 
-
      }
 
 }
