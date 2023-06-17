@@ -30,7 +30,7 @@ public class C08_JSONObjectVerileriCagirma {
      */
 
     @Test
-    public void jsonPath01(){
+    public void jsonObje01(){
 
         JSONObject cepTel = new JSONObject();
         
