@@ -6,8 +6,7 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 
 public class C15_BaseUrlJsonPlaceHolder extends JsonPlaceHolderBaseURL {
     //Class icinde 3 Test metodu olusturun ve asagidaki testleri yapin
@@ -96,7 +95,19 @@ public class C15_BaseUrlJsonPlaceHolder extends JsonPlaceHolderBaseURL {
 
         // 1 - Url hazirla
 
+        specJsonPlace.pathParams("pp1","posts", "pp2",50);
 
+        // 2 - Expected Data hazirla
+
+        // 3 - Response'i kaydet
+
+        Response response = given().spec(specJsonPlace).when().delete("/{pp1}/{pp2}");
+
+        response.prettyPrint();
+
+        // Assertion
+
+        response.then().assertThat().statusCode(200).body("title",nullValue());
 
     }
 }
