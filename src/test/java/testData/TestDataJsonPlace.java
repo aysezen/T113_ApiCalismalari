@@ -5,6 +5,9 @@ import org.json.JSONObject;
 public class TestDataJsonPlace {
 
       public int basariliStatusCode = 200;
+      public String contentType = "application/json; charset=utf-8";
+      public String connectionHeaderDegeri = "keep-alive";
+
       public JSONObject expectedBodyOlusturJSON(){
 
           JSONObject expData = new JSONObject();
