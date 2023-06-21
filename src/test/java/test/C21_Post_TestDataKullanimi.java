@@ -89,6 +89,7 @@ public class C21_Post_TestDataKullanimi extends HerokuAppBaseURL {
                                     respJP.get("booking.bookingdates.checkin"));
         assertEquals(expData.getJSONObject("booking").getJSONObject("bookingdates").get("checkout"),
                 respJP.get("booking.bookingdates.checkout"));
+
     }
 
 }
