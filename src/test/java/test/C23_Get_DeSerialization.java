@@ -57,10 +57,26 @@ public class C23_Get_DeSerialization extends DummyBaseURL {
 
         HashMap<String,Object> respMap = response.as(HashMap.class);
 
-        assertEquals(  ((Map)(expData.get("data"))).get("id") ,
-                        ((Map)(respMap.get("data"))).get("id") );
+        assertEquals(testDataDummy.basariliStatusCode, response.getStatusCode());
+        assertEquals(testDataDummy.contentType, response.getContentType());
 
+        assertEquals(expData.get("status") , respMap.get("status"));
+        assertEquals(expData.get("message") , respMap.get("message"));
 
+        assertEquals(  ((Map) (expData.get("data"))).get("id") ,
+                       ((Map) (respMap.get("data"))).get("id") );
+
+        assertEquals(  ((Map) (expData.get("data"))).get("employee_name") ,
+                       ((Map) (respMap.get("data"))).get("employee_name") );
+
+        assertEquals( ((Map) (expData.get("data"))).get("employee_salary") ,
+                      ((Map) (respMap.get("data"))).get("employee_salary")     );
+
+        assertEquals( ((Map) (expData.get("data"))).get("employee_age") ,
+                      ((Map) (respMap.get("data"))).get("employee_age")     );
+
+        assertEquals( ((Map) (expData.get("data"))).get("profile_image") ,
+                      ((Map) (respMap.get("data"))).get("profile_image")     );
 
     }
 
