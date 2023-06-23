@@ -74,15 +74,13 @@ public class C26_Post_Pojo extends HerokuAppBaseURL {
 
         assertEquals(expData.getBooking().getFirstname(), respPojo.getBooking().getFirstname() );
         assertEquals(expData.getBooking().getLastname() , respPojo.getBooking().getLastname());
+        assertEquals(expData.getBooking().getTotalprice(), respPojo.getBooking().getTotalprice());
+        assertEquals(expData.getBooking().isDepositpaid() , respPojo.getBooking().isDepositpaid());
         assertEquals(expData.getBooking().getBookingdates().getCheckin(),
                      respPojo.getBooking().getBookingdates().getCheckin());
-        assertEquals(expData.getBooking().isDepositpaid() , respPojo.getBooking().isDepositpaid());
-
-
-
-
-
-
+        assertEquals(expData.getBooking().getBookingdates().getCheckout(),
+                     respPojo.getBooking().getBookingdates().getCheckout());
+        assertEquals(expData.getBooking().getAdditionalneeds(), respPojo.getBooking().getAdditionalneeds());
 
     }
 }
