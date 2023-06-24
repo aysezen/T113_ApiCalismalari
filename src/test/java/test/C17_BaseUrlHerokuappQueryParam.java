@@ -97,8 +97,27 @@ public class C17_BaseUrlHerokuappQueryParam extends HerokuAppBaseURL {
          en az bir booking oldugunu test edin.
     */
 
+        // 1 - Url hazirla
 
+        specHerokuApp
+                .pathParam("pp1","booking")
+                .queryParams("firstname","Jim","lastname","Jackson");
 
+        // 2 - Expected Data
+
+        // 3 - Response'i kaydet
+
+        Response response = given().spec(specHerokuApp).when().get("/{pp1}");
+
+        response.prettyPrint();
+
+        // 4 - Assertion
+
+        response
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .body("bookingid",hasSize(3));
 
     }
 
